@@ -1,0 +1,13 @@
+{
+    "name": "kelnik/test",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Kelnik\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
