@@ -17,30 +17,6 @@ $result = $guestBookRepository->findNewRecords();
 <body>
 <div class="container">
     <div class="row">
-        <div class="panel panel-default widget">
-            <div class="panel-body">
-                <ul class="list-group">
-                    <?php foreach ($result as $guestBook):?>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-xs-10 col-md-11">
-                                    <div>
-                                        <div class="mic-info">
-                                            <?=htmlentities($guestBook->getName())?> | <?=$guestBook->getDateCreate()->format('Y-m-d H:i:s')?>
-                                        </div>
-                                    </div>
-                                    <div class="comment-text">
-                                        <?=htmlentities($guestBook->getBody())?>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    <?php endforeach;?>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-12 col-md-8 col-lg-6 pb-5">
             <form class="js-guest_from" method="post" action="/public/api/add_comment.php">
                 <div class="card border-primary rounded-0">
@@ -83,6 +59,30 @@ $result = $guestBookRepository->findNewRecords();
 
                 </div>
             </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default widget">
+            <div class="panel-body">
+                <ul class="list-group">
+                    <?php foreach ($result as $guestBook):?>
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-10 col-md-11">
+                                    <div>
+                                        <div class="mic-info">
+                                            <?=htmlentities($guestBook->getName())?> | <?=$guestBook->getDateCreate()->format('Y-m-d H:i:s')?>
+                                        </div>
+                                    </div>
+                                    <div class="comment-text">
+                                        <?=htmlentities($guestBook->getBody())?>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    <?php endforeach;?>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
