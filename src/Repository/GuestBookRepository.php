@@ -70,7 +70,7 @@ class GuestBookRepository extends BaseMysqlRepository implements GuestBookReposi
         }
 
         return new GuestBook(
-            (int)$entity['id'],
+            (int)$entity['id'] ?: null,
             $dateCreate,
             $entity['name'],
             $entity['email'],
